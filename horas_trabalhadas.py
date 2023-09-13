@@ -17,14 +17,14 @@ class HorasTrabalhadas:
             hora_termino = datetime.strptime(hora_termino, formato)
             duracao_intervalo = datetime.strptime(duracao_intervalo, formato)
 
-            if duracao_intervalo >= timedelta(hours=24):
+            if duracao_intervalo >= timedelta(hours=24): # type: ignore
                 raise ValueError("A duração do intervalo deve ser menor que 24 horas.")
 
             # Verificar se os horários estão invertidos e ajustar, se necessário
             if hora_termino < hora_inicio:
                 hora_termino, hora_inicio = hora_inicio, hora_termino
 
-            diferenca = hora_termino - hora_inicio - duracao_intervalo
+            diferenca = hora_termino - hora_inicio - duracao_intervalo # type: ignore
             horas_trabalhadas = diferenca.total_seconds() / 3600
 
             return round(horas_trabalhadas, 2)
