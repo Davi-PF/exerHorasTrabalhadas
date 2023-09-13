@@ -1,12 +1,13 @@
 from horas_trabalhadas import HorasTrabalhadas
 
+
 def main():
     while True:
         print("\nOpções:")
         print("1 - Calcular horas trabalhadas")
         print("2 - Validar formato de hora")
         print("3 - Sair")
-        
+
         escolha = input("Escolha uma opção: ")
 
         if escolha == "1":
@@ -15,7 +16,9 @@ def main():
             duracao_intervalo = input("Digite a duração do intervalo (H:mm ou HHmm): ")
 
             try:
-                horas_trabalhadas = HorasTrabalhadas.calcular_horas_trabalhadas(hora_inicio, hora_termino, duracao_intervalo)
+                horas_trabalhadas = HorasTrabalhadas.calcular_horas_trabalhadas(
+                    hora_inicio, hora_termino, duracao_intervalo
+                )
                 print(f"Horas trabalhadas: {horas_trabalhadas} horas")
             except ValueError as e:
                 print(f"Erro: {str(e)}")
@@ -36,5 +39,6 @@ def main():
         else:
             print("Opção inválida. Tente novamente.")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

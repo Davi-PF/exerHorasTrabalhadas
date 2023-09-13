@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 
+
 class HorasTrabalhadas:
     @staticmethod
     def calcular_horas_trabalhadas(hora_inicio, hora_termino, duracao_intervalo):
@@ -11,7 +12,7 @@ class HorasTrabalhadas:
                 formato = "%H:%M"
             else:
                 raise ValueError("Formato de hora inválido.")
-            
+
             hora_inicio = datetime.strptime(hora_inicio, formato)
             hora_termino = datetime.strptime(hora_termino, formato)
             duracao_intervalo = datetime.strptime(duracao_intervalo, formato)
